@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lik Lak Premium Universe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+:root{--glass-bg:rgba(255,255,255,.05);
+    --glass-border:rgba(255,255,255,.1);
+    --pink:#ff1361;
+    --yellow:#ffdb3b;
+    --purple:#b800ff;
+    --cyan:#00f2fe;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:#09021f;
+    color:white;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+.mesh{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    overflow:hidden;
+}
+.blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(140px);
+    opacity:.55;
+    animation:move 18s infinite alternate ease-in-out;
+}
+.blob1{
+    width:500px;
+    height:500px;
+    background:var(--yellow);
+    top:-10%;
+    left:5%;
+}
+.blob2{
+    width:600px;
+    height:600px;
+    background:var(--pink);
+    right:-10%;
+    bottom:-10%;
+}
+.blob3{
+    width:550px;
+    height:550px;
+    background:var(--purple);
+    left:35%;
+    top:35%;
+}
+.blob4{
+    width:450px;
+    height:450px;
+    background:var(--cyan);
+    right:10%;
+    top:10%;
+}
+    @keyframes move{
+
+        0%{
+        transform:translate(0,0) scale(1);
+        }
+        50%{
+        transform:translate(100px,-50px) scale(1.15);
+        }
+        100%{
+        transform:translate(-60px,60px) scale(.95);
+        }
+    }
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    backdrop-filter:blur(20px);
+    background:rgba(9,2,31,.4);
+    border-bottom:1px solid var(--glass-border);
+}
+.logo{
+    font-family:'Outfit',sans-serif;
+    font-size:32px;
+    font-weight:900;
+    background:linear-gradient(45deg,var(--yellow),var(--pink),var(--purple));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+nav{
+    display:flex;
+    gap:35px;
+}
+nav a{
+    text-decoration:none;
+    color:rgba(255,255,255,.7);
+    font-weight:700;
+    transition:.3s;
+}
+nav a:hover{
+    color:white;
+}
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 80px;
+}
+.hero h1{
+    font-family:'Outfit',sans-serif;
+    font-size:5rem;
+    line-height:1;
+    background:linear-gradient(to bottom,white,rgba(255,255,255,.35));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:15px;
+}
+.hero p{
+    max-width:700px;
+    opacity:.75;
+    line-height:1.8;
+}
+.portal{
+    position:relative;
+    width:320px;
+    height:320px;
+    margin:40px 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.portal-glow{
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:linear-gradient(45deg,var(--yellow),var(--pink),var(--purple),var(--cyan));
+    filter:blur(40px);
+    animation:spin 10s linear infinite;
+}
+    @keyframes spin{
+    100%{transform:rotate(360deg);
+}
+}
+.product-image{
+    width:220px;
+    height:220px;
+    object-fit:contain;
+    position:relative;
+    z-index:5;
+    filter:drop-shadow(0 20px 30px rgba(0,0,0,.5));
+    transition:.4s;
+}
+.product-image:hover{
+    transform:scale(1.08)rotate(-3deg);
+}
+.cta{
+    padding:16px 40px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,var(--yellow),var(--pink),var(--purple));
+    color:white;
+    font-weight:800;
+    cursor:pointer;
+    text-decoration:none;
+    box-shadow:0 15px 35px rgba(255,19,97,.35);
+}
+.cta:hover{
+    transform:translateY(-4px);
+}
+.products-section{
+    padding:100px 40px;
+}
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    font-family:'Outfit',sans-serif;
+    margin-bottom:60px;
+}
+.products-grid{
+    display:grid;
+    grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+.product-card{
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    padding:25px;
+    text-align:center;
+    transition:.4s;
+}
+.product-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(255,19,97,.15);
+}
+.product-card img{
+    width:140px;
+    height:140px;
+    object-fit:contain;
+    margin-bottom:20px;
+}
+.product-card h3{
+    margin-bottom:10px;
+}
+.product-card p{
+    opacity:.7;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+.price{
+    font-size:22px;
+    font-weight:800;
+    color:#ffdb3b;
+    margin-bottom:20px;
+}
+.buy-btn{
+    padding:12px 25px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    color:white;
+    font-weight:700;
+    background:linear-gradient(45deg,#ffdb3b,#ff1361,#b800ff);
+}
+.about-section{
+    padding:120px 30px;
+    display:flex;
+    justify-content:center;
+}
+.about-box{
+    max-width:900px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    padding:50px;
+    border-radius:35px;
+    text-align:center;
+}
+.about-box h2{
+    font-size:3rem;
+    margin-bottom:25px;
+    font-family:'Outfit',sans-serif;
+}
+.about-box p{
+    line-height:2;
+    opacity:.8;
+}
+.contact-section{
+    padding:100px 30px;
+    text-align:center;
+}
+.contact-section h2{
+    font-size:3rem;
+    margin-bottom:50px;
+    font-family:'Outfit',sans-serif;
+}
+.contact-grid{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+.contact-card{
+    width:130px;
+    height:130px;
+    border-radius:30px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:white;
+    transition:.4s;
+}
+.contact-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(255,19,97,.2);
+}
+.contact-card i{
+    font-size:35px;
+    margin-bottom:12px;
+}
+footer{
+    padding:50px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:80px;
+}
+.footer-logo{
+    font-size:32px;
+    font-weight:900;
+    font-family:'Outfit',sans-serif;
+    background:linear-gradient(45deg,#ffdb3b,#ff1361,#b800ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:15px;
+}
+footer p{
+    opacity:.6;
+}
+@media(max-width:768px){
+
+    header{
+            padding:15px 20px;
+    }
+    nav{
+            display:none;
+    }
+    .hero h1{
+            font-size:2.8rem;
+    }
+    .portal{
+            width:220px;
+            height:220px;
+    }
+    .product-image{
+            width:170px;
+            height:170px;
+    }
+    .section-title,
+    .about-box h2,
+    .contact-section h2{
+            font-size:2rem;
+    }
+    .products-section{
+            padding:80px 20px;
+    }
+    .about-box{
+            padding:30px;
+    }
+    .contact-card{
+            width:100px;
+            height:100px;
+    }
+}
+</style>
+</head>
+<body>
+  <div class="mesh">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+  </div>
+<header>
+  <div class="logo">LIK LAK</div>
+  <nav>
+    <a href="#products">Mahsulotlar</a>
+    <a href="#about">Biz haqimizda</a>
+    <a href="#contact">Aloqa</a>
+  </nav>
+</header>
+ <section class="hero">
+ <h1>PREMIUM<br>
+    ICE CREAM
+ </h1>
+  <p>
+    Lik Lak premium mevali muzqaymoqlari.
+    Tabiiy ingredientlar, premium dizayn
+    va zamonaviy lazzat.
+  </p>
+ <div class="portal">
+ <div class="portal-glow"></div>
+  <img
+    src="images/mix-fruity.png"
+    class="product-image"
+    alt="Lik Lak">
+ </div>
+    <a href="#products" class="cta">
+        Mahsulotlarni ko'rish
+    </a>
+</section>
+<section id="products" class="products-section">
+    <h2 class="section-title">
+        Mashhur Lazzatlar
+    </h2>
+  <div class="products-grid">
+  <div class="product-card">
+    <img src="images/mix-fruity.png">
+        <h3>Mix Fruity</h3>
+    <p>
+        Tropik mevalarning premium aralashmasi.
+    </p>
+  <div class="price">
+    15 000 so'm
+  </div>
+    <button class="buy-btn">
+        Buyurtma berish
+    </button>
+  </div>
+  <div class="product-card">
+  <img src="images/mango.png">
+    <h3>Mango Mania</h3>
+    <p>
+       Haqiqiy mango sharbati asosida.
+    </p>
+
+  <div class="price">
+    18 000 so'm
+  </div>
+    <button class="buy-btn">
+        Buyurtma berish
+    </button>
+  </div>
+  <div class="product-card">
+    <img src="images/strawberry.png">
+    <h3>Strawberry</h3>
+    <p>
+        Shirin va tabiiy qulupnay ta'mi.
+    </p>
+  <div class="price">
+    14 000 so'm
+  </div>
+    <button class="buy-btn">
+        Buyurtma berish
+    </button>
+  </div>
+  <div class="product-card">
+   <img src="images/melon.png">
+    <h3>Royal Melon</h3>
+    <p>
+        O'zbek qovunining muzdek talqini.
+    </p>
+  <div class="price">
+    13 000 so'm
+  </div>
+    <button class="buy-btn">
+        Buyurtma berish
+    </button>
+  </div>
+  </div>
+</section>
+<section id="about" class="about-section">
+  <div class="about-box">
+   <h2>Lik Lak haqida</h2>
+    <p>
+        Lik Lak — premium mevali muzqaymoqlar brendi.
+        Bizning maqsadimiz tabiiy mevalardan tayyorlangan,
+        zamonaviy va sifatli mahsulotlarni mijozlarga taqdim etishdir.
+
+        Har bir mahsulot eng yaxshi ingredientlar asosida
+        tayyorlanadi va yuqori sifat nazoratidan o'tadi.
+    </p>
+</div>
+</section>
+<section id="contact" class="contact-section">
+    <h2>Biz bilan bog'laning</h2>
+  <div class="contact-grid">
+    <a href="https://t.me/liklak_uz" class="contact-card">
+        <i class="fab fa-telegram"></i>
+        <span>Telegram</span>
+    </a>
+    <a href="https://instagram.com/liklak_uz" class="contact-card">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+    </a>
+    <a href="tel:+998901234567" class="contact-card">
+        <i class="fas fa-phone"></i>
+        <span>Telefon</span>
+    </a>
+ </div>
+</section>
+<footer>
+  <div class="footer-logo">
+    LIK LAK
+  </div>
+    <p>
+        Premium Ice Cream Universe © 2026
+    </p>
+</footer>
